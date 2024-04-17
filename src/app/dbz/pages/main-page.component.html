@@ -3,9 +3,18 @@
 
 <div class="row">
   <div class="col">
-    <app-dbz-list [characterList]="characters"></app-dbz-list>
+    <app-dbz-list
+      [characterList]="characters"
+      (onDeleteId)="onDeleteCharacter($event)"
+    ></app-dbz-list>
   </div>
   <div class="col">
-    <app-dbz-add-character></app-dbz-add-character>
+    <app-dbz-add-character
+      (onNewCharacter)="onNewCharacter($event)"
+    ></app-dbz-add-character>
+    <!-- event es el parametro o lo que se envia -->
   </div>
 </div>
+
+<!-- () son evento -> cuando quereoms escuchar el evento cuando un componente emita un mensaje->  -->
+<!-- [] son atributos -> cuando queres mandar del padre al hijo-->

@@ -5,35 +5,40 @@ import { CacheStore } from '../interfaces/cache-store.interfaces';
 import { Country } from '../interfaces/country.interfaces';
 import { Region } from '../interfaces/region.types';
 
+const initialValues: CacheStore = {
+  byCapital: {
+    search: '',
+    countries: [],
+  },
+  byRegion: {
+    search: '',
+    countries: [],
+  },
+  byCountries: {
+    search: '',
+    countries: [],
+  },
+};
+
 @Injectable({
   providedIn: 'root',
 })
 export class CountryService {
   private apiUrl: string = 'https://restcountries.com/v3.1';
 
-  public cacheStore: CacheStore = {
-    byCapital: {
-      search: '',
-      countries: [],
-    },
-    byRegion: {
-      search: '',
-      countries: [],
-    },
-    byCountries: {
-      search: '',
-      countries: [],
-    },
-  };
+  public cacheStore: CacheStore = initialValues;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+    this.loadFromLocalStorage();
+  }
 
   searchCapital(capitalName: string): Observable<Country[]> {
     return this.search('capital', capitalName).pipe(
       tap(
         (countries) =>
           (this.cacheStore.byCapital = { search: capitalName, countries })
-      )
+      ),
+      tap(() => this.saveToLocalStorage())
     );
   }
 
@@ -42,7 +47,8 @@ export class CountryService {
       tap(
         (countries) =>
           (this.cacheStore.byCountries = { search: countryName, countries })
-      )
+      ),
+      tap(() => this.saveToLocalStorage())
     );
   }
 
@@ -51,7 +57,8 @@ export class CountryService {
       tap(
         (countries) =>
           (this.cacheStore.byRegion = { search: regionName, countries })
-      )
+      ),
+      tap(() => this.saveToLocalStorage())
     );
   }
 
@@ -65,5 +72,21 @@ export class CountryService {
   private search(endpoint: string, q: string): Observable<Country[]> {
     const url = `${this.apiUrl}/${endpoint}/${q}`;
     return this.http.get<Country[]>(url).pipe(catchError(() => of([])));
+  }
+
+  private saveToLocalStorage(): void {
+    localStorage.setItem('cacheStore', JSON.stringify(this.cacheStore));
+  }
+
+  private loadFromLocalStorage(): void {
+    const cacheStore = localStorage.getItem('cacheStore');
+
+    if (cacheStore || cacheStore !== null) {
+      try {
+        this.cacheStore = JSON.parse(cacheStore);
+      } catch (error) {
+        this.cacheStore = initialValues;
+      }
+    }
   }
 }

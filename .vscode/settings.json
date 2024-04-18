@@ -4,5 +4,12 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "bases": true,
+    "gifs-app": true
   }
 }

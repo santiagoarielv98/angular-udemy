@@ -2,6 +2,6 @@
   type="text"
   [placeholder]="placeholder"
   class="form-control"
-  (keyup.enter)="onEnter(txtInput.value)"
   #txtInput
+  (keyup)="onKeyPress(txtInput.value)"
 />

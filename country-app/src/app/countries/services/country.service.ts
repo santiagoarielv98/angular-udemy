@@ -11,21 +11,22 @@ export class CountryService {
 
   constructor(private http: HttpClient) {}
 
-  searchCapital(q: string): Observable<Country[]> {
-    return this.search('capital', q);
+  searchCapital(capitalName: string): Observable<Country[]> {
+    return this.search('capital', capitalName);
   }
 
-  searchName(q: string): Observable<Country[]> {
-    return this.search('name', q);
+  searchName(name: string): Observable<Country[]> {
+    return this.search('name', name);
   }
 
-  searchRegion(q: string): Observable<Country[]> {
-    return this.search('region', q);
+  searchRegion(regionName: string): Observable<Country[]> {
+    return this.search('region', regionName);
   }
 
-  searchCountryByAlphaCode(q: string): Observable<Country | null> {
-    return this.search('alpha', q).pipe(
-      map((countries) => (countries.length > 0 ? countries[0] : null))
+  searchCountryByAlphaCode(alphaCode: string): Observable<Country | null> {
+    return this.search('alpha', alphaCode).pipe(
+      map((countries) => (countries.length > 0 ? countries[0] : null)),
+      catchError(() => of(null))
     );
   }
 

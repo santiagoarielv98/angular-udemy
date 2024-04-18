@@ -2,7 +2,7 @@
 <hr />
 
 <ul class="list-group">
-  <li
+  <!--   <li
     [routerLinkActiveOptions]="{ exact: true }"
     class="list-group-item"
     role="button"
@@ -10,21 +10,14 @@
     routerLinkActive="active"
   >
     Home Page
-  </li>
+  </li> -->
   <li
+    *ngFor="let route of routes"
     class="list-group-item"
     role="button"
-    routerLink="about"
+    [routerLink]="route.path"
     routerLinkActive="active"
   >
-    About Page
-  </li>
-  <li
-    class="list-group-item"
-    role="button"
-    routerLink="contact"
-    routerLinkActive="active"
-  >
-    Contact Page
+    {{ route.name }}
   </li>
 </ul>

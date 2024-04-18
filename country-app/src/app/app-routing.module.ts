@@ -18,6 +18,9 @@ const routes: Routes = [
     component: ContactPageComponent,
   },
   {
+    path: 'countries',
+  },
+  {
     path: '**',
     redirectTo: '',
   },

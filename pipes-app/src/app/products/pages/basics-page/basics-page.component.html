@@ -1,1 +1,35 @@
-<p>basics-page works!</p>
+<p-panel styleClass="mt-4">
+  <ng-template pTemplate="header">
+    <h1>Pipes Basicos</h1>
+  </ng-template>
+  <p>Pipes incluidos de Angular - Usualmente en el Common Module</p>
+</p-panel>
+<div class="grid mt-4">
+  <div class="col-12 md:col-4">
+    <p-card>
+      <ng-template pTemplate="title">
+        <h3>uppercase</h3>
+      </ng-template>
+      <p><b>Original:</b> {{ nameLower }}</p>
+      <p><b>Pipe:</b> {{ nameLower | uppercase }}</p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="">
+      <ng-template pTemplate="title">
+        <h3>lowercase</h3>
+      </ng-template>
+      <p><b>Original:</b> {{ nameUpper }}</p>
+      <p><b>Pipe:</b> {{ nameUpper | lowercase }}</p>
+    </p-card>
+  </div>
+  <div class="col-12 md:col-4">
+    <p-card header="">
+      <ng-template pTemplate="title">
+        <h3>titlecase</h3>
+      </ng-template>
+      <p><b>Original:</b> {{ fullName }}</p>
+      <p><b>Pipe:</b> {{ fullName | titlecase }}</p>
+    </p-card>
+  </div>
+</div>

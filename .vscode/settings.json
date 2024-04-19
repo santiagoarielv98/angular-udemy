@@ -10,6 +10,7 @@
     "**/bower_components": true,
     "**/*.code-search": true,
     "bases": true,
-    "gifs-app": true
+    "gifs-app": true,
+    "country-app": true
   }
 }

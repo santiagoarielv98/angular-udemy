@@ -3,8 +3,8 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styles: []
+  styles: [],
 })
 export class AppComponent {
-  title = 'pipes-app';
+  public title: string = 'SAntiAgo viLLaNUeVa';
 }

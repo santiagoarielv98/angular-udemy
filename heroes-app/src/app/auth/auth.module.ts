@@ -1,4 +1,6 @@
 import { NgModule } from '@angular/core';
+
+import { MaterialModule } from '../material/material.module';
 import { AuthRoutingModule } from './auth-routing.module';
 
 import { LayoutComponent } from './layout/layout.component';
@@ -7,6 +9,6 @@ import { RegisterPageComponent } from './pages/register-page/register-page.compo
 
 @NgModule({
   declarations: [LoginPageComponent, RegisterPageComponent, LayoutComponent],
-  imports: [AuthRoutingModule],
+  imports: [AuthRoutingModule, MaterialModule],
 })
 export class AuthModule {}

@@ -6,6 +6,8 @@ import { ListPageComponent } from './pages/list-page/list-page.component';
 import { NewPageComponent } from './pages/new-page/new-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
 import { LayoutComponent } from './layout/layout.component';
+import { MaterialModule } from '../material/material.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -15,6 +17,6 @@ import { LayoutComponent } from './layout/layout.component';
     SearchPageComponent,
     LayoutComponent,
   ],
-  imports: [HeroesRoutingModule],
+  imports: [HeroesRoutingModule, MaterialModule, CommonModule],
 })
 export class HeroesModule {}

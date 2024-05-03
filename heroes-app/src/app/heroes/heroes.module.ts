@@ -9,6 +9,7 @@ import { LayoutComponent } from './layout/layout.component';
 import { MaterialModule } from '../material/material.module';
 import { CommonModule } from '@angular/common';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
+import { HeroImagePipe } from './pipes/hero-image.pipe';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { HeroCardComponent } from './components/hero-card/hero-card.component';
     SearchPageComponent,
     LayoutComponent,
     HeroCardComponent,
+    HeroImagePipe,
   ],
   imports: [HeroesRoutingModule, MaterialModule, CommonModule],
 })

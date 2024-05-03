@@ -1,1 +1,53 @@
-<p>numbers-page works!</p>
+<p-panel styleClass="mt-4">
+  <ng-template pTemplate="header">
+    <h1>Pipes numericos</h1>
+  </ng-template>
+  <p>Pipes incluidos de Angular - Usualmente en el Common Module</p>
+</p-panel>
+<div class="grid mt-4">
+  <div class="col-12 md:col-4">
+    <p-card subheader="del presente año">
+      <ng-template pTemplate="title">
+        <h3>Ventas Netas</h3>
+      </ng-template>
+      <p><b>Original:</b> {{ totalSells }}</p>
+      <p><b>Pipe | number:</b> {{ totalSells + 1235 | number }}</p>
+      <p>
+        <b>Pipe | number: "1.2-2" </b>
+        {{ totalSells + 1235 | number : "1.2-2" }}
+      </p>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card subheader="del presente año">
+      <ng-template pTemplate="title">
+        <h3>Ventas Brutas</h3>
+      </ng-template>
+
+      <p><b>Original:</b> {{ totalSells }}</p>
+      <p><b>Pipe | currency:</b> {{ totalSells | currency }}</p>
+      <p><b>Pipe | currency: "ARS" </b> {{ totalSells | currency : "ARS" }}</p>
+      <p>
+        <b>Pipe | currency: "ARS": "code" </b>
+        {{ totalSells | currency : "ARS" : "code" }}
+      </p>
+      <p>
+        <b>Pipe | currency: "ARS": "code": "1.6-6" </b>
+        {{ totalSells | currency : "ARS" : "code" : "1.6-6" }}
+      </p>
+    </p-card>
+  </div>
+
+  <div class="col-12 md:col-4">
+    <p-card subheader="del presente año">
+      <ng-template pTemplate="title">
+        <h3>Ganancia porcentual</h3>
+      </ng-template>
+
+      <p><b>Original:</b> {{ percent }}</p>
+      <p><b>Pipe | percent:</b> {{ percent | percent }}</p>
+      <p><b>Pipe | percent : "1.2-2":</b> {{ percent | percent : "1.2-2" }}</p>
+    </p-card>
+  </div>
+</div>

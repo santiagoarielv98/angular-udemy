@@ -10,6 +10,7 @@ import { MaterialModule } from '../material/material.module';
 import { CommonModule } from '@angular/common';
 import { HeroCardComponent } from './components/hero-card/hero-card.component';
 import { HeroImagePipe } from './pipes/hero-image.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,11 @@ import { HeroImagePipe } from './pipes/hero-image.pipe';
     HeroCardComponent,
     HeroImagePipe,
   ],
-  imports: [HeroesRoutingModule, MaterialModule, CommonModule],
+  imports: [
+    HeroesRoutingModule,
+    MaterialModule,
+    CommonModule,
+    ReactiveFormsModule,
+  ],
 })
 export class HeroesModule {}

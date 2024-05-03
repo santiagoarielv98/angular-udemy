@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {} from 'rxjs';
+import { interval, tap } from 'rxjs';
 
 const initialClients = ['Maria', 'Pedro', 'Fernando'];
 
@@ -82,4 +82,15 @@ export class UncommonPageComponent {
     age: 25,
     address: 'Buenos Aires, Argentina',
   };
+
+  // Async Pipe
+  public myOservableTimer = interval(2000).pipe(
+    tap((value) => console.log('tap:', value))
+  );
+
+  public promiseValue: Promise<string> = new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('Tenemos data en la promesa');
+    }, 3500);
+  });
 }

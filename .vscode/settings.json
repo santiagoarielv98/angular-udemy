@@ -11,6 +11,7 @@
     "**/*.code-search": true,
     "bases": true,
     "gifs-app": true,
-    "country-app": true
+    "country-app": true,
+    "pipes-app": true
   }
 }

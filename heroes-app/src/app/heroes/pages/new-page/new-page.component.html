@@ -9,39 +9,49 @@
   <div class="col-12 sm:col-6">
     <mat-card>
       <mat-card-content>
-        <div class="grid">
+        <form class="grid" [formGroup]="heroForm" (ngSubmit)="onSubmit()">
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Super heroe</mat-label>
-            <input type="text" matInput required />
+            <input type="text" matInput required formControlName="superhero" />
           </mat-form-field>
 
           <mat-form-field class="col-12 sm:col-6">
             <mat-label>Alter ego</mat-label>
-            <input type="text" matInput required />
+            <input type="text" matInput required formControlName="alter_ego" />
           </mat-form-field>
 
           <mat-form-field class="col-12 sm:col-">
             <mat-label>Primera aparicion</mat-label>
-            <input type="text" matInput required />
+            <input
+              type="text"
+              matInput
+              required
+              formControlName="first_appearance"
+            />
           </mat-form-field>
 
           <mat-form-field class="col-12 sm:col-">
             <mat-label>Personajes</mat-label>
-            <input type="text" matInput required />
+            <input type="text" matInput required formControlName="characters" />
           </mat-form-field>
 
           <mat-form-field class="col-12 sm:col-">
             <mat-label>Creador</mat-label>
-            <mat-select required>
+            <mat-select required formControlName="publisher">
               <mat-option *ngFor="let item of publishers" [value]="item">
                 {{ item }}
               </mat-option>
             </mat-select>
           </mat-form-field>
-        </div>
+
+          <mat-form-field class="col-12 sm:col-">
+            <mat-label>Alternative Image</mat-label>
+            <input type="text" matInput required formControlName="alt_img" />
+          </mat-form-field>
+        </form>
         <div class="flex justify-content-between">
           <button mat-flat-button color="warn">Borrar</button>
-          <button mat-flat-button color="primary">
+          <button mat-flat-button color="primary" (click)="onSubmit()">
             <mat-icon>save</mat-icon>
             Guardar
           </button>
@@ -51,7 +61,7 @@
   </div>
   <div class="col-12 sm:col-6">
     <mat-card>
-      <img [src]="" alt="imagen del heroe" />
+      <img [src]="currentHero | heroImage" alt="imagen del heroe" />
     </mat-card>
   </div>
 </div>

@@ -3,6 +3,7 @@
     <mat-toolbar>
       <span>Menu</span>
       <span class="flex-1"> </span>
+      <span>{{ user?.email }}</span>
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
@@ -25,7 +26,7 @@
       <mat-icon>menu</mat-icon>
     </button>
     <span class="flex-1"></span>
-    <button mat-button>Logout</button>
+    <button mat-button (click)="onLogout()">Logout</button>
   </mat-toolbar>
 
   <div class="container p-2">

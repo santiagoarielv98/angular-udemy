@@ -9,7 +9,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, SharedModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SharedModule,
+    HttpClientModule,
+    SharedModule,
+  ],
   providers: [provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })

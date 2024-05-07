@@ -12,6 +12,8 @@
     "bases": true,
     "gifs-app": true,
     "country-app": true,
-    "pipes-app": true
+    "pipes-app": true,
+    "heroes-app": true,
+    "form-app": false
   }
 }

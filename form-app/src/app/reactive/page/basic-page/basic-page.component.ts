@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ValidatorService } from '../../../shared/services/validators.service';
 import {
   FormBuilder,
   FormControl,
@@ -21,7 +22,10 @@ export class BasicPageComponent {
   //   price: [0],
   //   isStorage: [0],
   // });
-  constructor(public fb: FormBuilder) {}
+  constructor(
+    public fb: FormBuilder,
+    private validatorService: ValidatorService
+  ) {}
 
   onSave(): void {
     if (this.myForm.invalid) {
@@ -33,9 +37,7 @@ export class BasicPageComponent {
   }
 
   isValidField(field: string) {
-    return (
-      this.myForm.controls[field].errors && this.myForm.controls[field].touched
-    );
+    return this.validatorService.isValidField(this.myForm, field);
   }
   getFieldError(field: string) {
     if (!this.myForm.controls[field]) return null;

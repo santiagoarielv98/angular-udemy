@@ -15,6 +15,7 @@
     "pipes-app": true,
     "heroes-app": true,
     "form-app": true,
-    "selectores": false
+    "selectores": true,
+    "lifecycle": false
   }
 }

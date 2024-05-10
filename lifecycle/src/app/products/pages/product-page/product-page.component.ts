@@ -1,10 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-product-page',
+  selector: 'products-product-page',
   templateUrl: './product-page.component.html',
-  styles: ``
+  styles: ``,
 })
-export class ProductPageComponent {
-
-}
+export class ProductPageComponent {}

@@ -16,6 +16,7 @@
     "heroes-app": true,
     "form-app": true,
     "selectores": true,
-    "lifecycle": false
+    "lifecycle": true,
+    "map-app": false
   }
 }

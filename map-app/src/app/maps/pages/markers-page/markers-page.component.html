@@ -1,12 +1,25 @@
 <div #map style="width: 100vw; height: 100vh"></div>
 
 <ul class="list-group position-fixed" style="top: 20px; right: 20px">
-  <li class="list-group-item">Marker 1</li>
+  <li
+    class="list-group-item"
+    *ngFor="let marker of markers; let i = index"
+    (dblclick)="deleteMarker(i)"
+    role="button"
+    (click)="flyTo(marker.marker)"
+  >
+    <div>
+      <i class="bi bi-circle-fill me-2" [ngStyle]="{ color: marker.color }">
+      </i>
+      Marker {{ i + 1 }}
+    </div>
+  </li>
 </ul>
 
 <button
   class="btn btn-primary position-fixed"
   style="bottom: 30px; right: 20px"
+  (click)="createMarker()"
 >
   + Agregar Marcador
 </button>

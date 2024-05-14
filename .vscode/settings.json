@@ -5,6 +5,17 @@
     "markdown": false,
     "scminput": false
   },
+  "files.exclude": {
+    "**/bases": true,
+    "**/gifs-app": true,
+    "**/country-app": true,
+    "**/pipes-app": true,
+    "**/heroes-app": true,
+    "**/form-app": true,
+    "**/selectores": true,
+    "**/lifecycle": true,
+    "**/map-app": true
+  },
   "search.exclude": {
     "**/node_modules": true,
     "**/bower_components": true,
@@ -17,7 +28,8 @@
     "form-app": true,
     "selectores": true,
     "lifecycle": true,
-    "map-app": false
+    "map-app": true,
+    "directive-signals": false
   },
   "angular-schematics.schematicsDefaultOptions": {
     "angular-*": {

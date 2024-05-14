@@ -32,5 +32,8 @@
   </div>
   <div class="col-6">
     <pre>{{ user() | json }}</pre>
+    {{ fullName() }}
+
+    <button (click)="increaseBy(+1)" class="btn btn-primary"></button>
   </div>
 </div>

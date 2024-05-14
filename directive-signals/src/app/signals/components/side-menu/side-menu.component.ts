@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 interface MenuItem {
@@ -14,9 +14,14 @@ interface MenuItem {
   templateUrl: './side-menu.component.html',
 })
 export class SideMenuComponent {
-  public menuItems: MenuItem[] = [
+  public menuItems = signal<MenuItem[]>([
     { title: 'Contador', route: 'counter' },
     { title: 'Informacion', route: 'user-info' },
     { title: 'Mutaciones', route: 'properties' },
-  ];
+  ]);
+  // public menuItems: MenuItem[] = [
+  //   { title: 'Contador', route: 'counter' },
+  //   { title: 'Informacion', route: 'user-info' },
+  //   { title: 'Mutaciones', route: 'properties' },
+  // ];
 }

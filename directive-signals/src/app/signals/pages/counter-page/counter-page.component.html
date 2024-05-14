@@ -1,2 +1,11 @@
-<p>counter-page works!</p>
-,
+<h1>Counter: {{ counter() }}</h1>
+<hr />
+<h2>Square Counter {{ squareCounter() }}</h2>
+
+<div class="btn-group mt-2" role="group">
+  <button class="btn btn-outline-primary" (click)="increaseBy(+1)">+ 1</button>
+  <button class="btn btn-outline-primary" (click)="increaseBy(-1)">- 1</button>
+  <button class="btn btn-outline-primary" (click)="counter.set(0)">
+    Reset
+  </button>
+</div>

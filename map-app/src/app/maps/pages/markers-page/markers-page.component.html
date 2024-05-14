@@ -4,14 +4,21 @@
   <li
     class="list-group-item"
     *ngFor="let marker of markers; let i = index"
-    (dblclick)="deleteMarker(i)"
     role="button"
-    (click)="flyTo(marker.marker)"
+    style="max-width: 500px"
   >
-    <div>
-      <i class="bi bi-circle-fill me-2" [ngStyle]="{ color: marker.color }">
-      </i>
+    <div class="d-flex gap-3 align-items-center">
+      <i class="bi bi-circle-fill" [ngStyle]="{ color: marker.color }"> </i>
       Marker {{ i + 1 }}
+      <div class="d-flex gap-1">
+        <button class="btn btn-primary btn-sm" (click)="flyTo(marker.marker)">
+          <i class="bi bi-eye"></i>
+        </button>
+
+        <button class="btn btn-danger btn-sm" (click)="deleteMarker(i)">
+          <i class="bi bi-trash"></i>
+        </button>
+      </div>
     </div>
   </li>
 </ul>

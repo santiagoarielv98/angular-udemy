@@ -1,9 +1,12 @@
-<ul class="list-group position-fixed z-3 shadow" style="top: 20px; left: 20px">
+<ul
+  class="list-group position-fixed z-3 shadow"
+  style="top: 20px; left: 20px"
+  role="tablist"
+>
   <li
     [routerLink]="[item.path]"
     routerLinkActive="active"
-    class="list-group-item"
-    role="button"
+    class="list-group-item list-group-item-action"
     *ngFor="let item of menuItems"
   >
     {{ item.name }}

@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: 'alone',
-    loadChildren: () =>
+    loadComponent: () =>
       import('./alone/pages/alone-page/alone-page.component').then(
         (m) => m.AlonePageComponent
       ),

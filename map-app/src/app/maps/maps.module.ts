@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { MapsRoutingModule } from './maps-routing.module';
-import { SideMenuComponent } from './components/side-menu/side-menu.component';
+import { SideMenuComponent } from '../alone/components/side-menu/side-menu.component';
 import { MiniMapComponent } from './components/mini-map/mini-map.component';
 import { MapsLayoutComponent } from './layout/maps-layout/maps-layout.component';
 import { FullScreenPageComponent } from './pages/full-screen-page/full-screen-page.component';
@@ -19,13 +19,17 @@ mapboxgl.accessToken =
 @NgModule({
   declarations: [
     MiniMapComponent,
-    SideMenuComponent,
     MapsLayoutComponent,
     FullScreenPageComponent,
     MarkersPageComponent,
     PropertiesPageComponent,
     ZoomRangePageComponent,
   ],
-  imports: [CommonModule, MapsRoutingModule, CounterAloneComponent],
+  imports: [
+    CommonModule,
+    MapsRoutingModule,
+    CounterAloneComponent,
+    SideMenuComponent,
+  ],
 })
 export class MapsModule {}

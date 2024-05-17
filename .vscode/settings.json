@@ -14,7 +14,9 @@
     "**/form-app": true,
     "**/selectores": true,
     "**/lifecycle": true,
-    "**/map-app": true
+    "**/map-app": true,
+    "directive-signals": true
+
   },
   "search.exclude": {
     "**/node_modules": true,
@@ -29,7 +31,7 @@
     "selectores": true,
     "lifecycle": true,
     "map-app": true,
-    "directive-signals": false
+    "directive-signals": true
   },
   "angular-schematics.schematicsDefaultOptions": {
     "angular-*": {

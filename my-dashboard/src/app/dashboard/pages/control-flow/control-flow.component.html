@@ -1,3 +1,5 @@
+<app-title value="Control Flow" />
+
 <section class="grid grid-cols-1 md:grid-cols-2 gap-3">
   <div class="bg-white rounded shadow p-10">
     <h2 class="text-2xl font-bold mb-5">If: {{ showContext() }}</h2>
@@ -25,5 +27,22 @@
     } @default{
     <p>Reprobado</p>
     } }
+  </div>
+
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks(); track framework; let i = $index) {
+      <li>{{ i + 1 }} - {{ framework }}</li>
+      }
+    </ul>
+  </div>
+  <div class="bg-white rounded shadow p-10">
+    <ul>
+      @for (framework of frameworks2(); track framework) {
+      <li>{{ framework }}</li>
+      } @empty {
+      <li>No hay frameworks agregados</li>
+      }
+    </ul>
   </div>
 </section>
